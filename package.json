@@ -1,6 +1,6 @@
 {
   "name": "sapling-dcl",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Add brand connections to your LAND with ease.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,7 +16,8 @@
     "postversion": "git push && git push --tags"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "src/**/*"
   ],
   "author": "Sapling.gg",
   "license": "ISC",
