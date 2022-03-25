@@ -1,33 +1,59 @@
 {
   "name": "sapling-dcl",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Add brand connections to your LAND with ease.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "decentralandLibrary": {},
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "build": "rollup -c --environment BUILD:production",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "make": "cp -r src dist && cp package.json dist/package.json && cp LICENSE dist/LICENSE && cp README.md dist/README.md",
+    "makeclean": "rm -rf dist && npm run make",
+    "link": "npm link && rollup --watch -c --environment BUILD:production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leelaludo/sapling-dcl.git"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "semi": false
   },
   "files": [
-    "src/**/*"
+    "dist",
+    "tsdoc-metadata.json"
   ],
   "author": "Sapling.gg",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "type": "module",
+  "homepage": "https://github.com/leelaludo/sapling-dcl#readme",
   "devDependencies": {
-    "prettier": "^2.6.0",
+    "@microsoft/api-extractor": "^7.13.2",
+    "decentraland-ecs": "latest",
+    "glob": "^7.1.6",
+    "rollup": "^2.35.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.2.4",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.6.2"
+    "prettier": "^2.6.1"
   },
-  "dependencies": {
-    "decentraland-ecs": "^6.9.1"
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "decentraland-ecs": "6.x.x"
   }
 }
