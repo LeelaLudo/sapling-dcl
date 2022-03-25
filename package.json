@@ -1,6 +1,6 @@
 {
   "name": "sapling-dcl",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "Add brand connections to your LAND with ease.",
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
     "build": "rollup -c --environment BUILD:production",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
+    "prepare": "npx tsc && npm run build && npx tsc",
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
