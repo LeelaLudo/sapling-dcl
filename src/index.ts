@@ -14,7 +14,7 @@ function track() {
 }
 
 /**
- * @beta
+ * @public
  */
 export function CreateBillboard(
   engine: Engine,
