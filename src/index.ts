@@ -1,5 +1,8 @@
 // Uses decentraland-ecs for types
 
+/**
+ * @internal
+ */
 function track() {
   // Track a user's position, TODO: Report this to endpoint
   /* setInterval needs to be defined
@@ -10,6 +13,9 @@ function track() {
   */
 }
 
+/**
+ * @beta
+ */
 export function CreateBillboard(
   engine: Engine,
   location = { x: 0, y: 0, z: 0 },
