@@ -4,16 +4,21 @@ Easily integrate your LAND with brands to sponsor your experience. Get in touch 
 
 ## Install
 
-`git clone git@github.com:LeelaLudo/sapling-dcl.git`
+`npm install sapling-dcl -B`
+
+`-B` ensures that the package will be bundled with your DCL setup.
 
 You must already be using `decentraland-ecs` (`npm install -g decentraland-ecs`).
 
 ## API
 
 ```
-import { CreateBillboard } from "<path-to-sapling-dcl>/src";
-// common: import { CreateBillboard } from "../sapling-dcl/src";
+import { CreateBillboard } from "sapling-dcl";
 
+// Use default params to start
+CreateBillboard(engine);
+
+// Then, you can customize the board location, size, and more!
 CreateBillboard(
     engine,
     location,
