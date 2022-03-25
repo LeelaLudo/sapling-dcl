@@ -1,6 +1,6 @@
 # Sapling.gg Decentraland Integration
 
-Easily integrate your LAND with brands to sponsor your experience. Get in touch to learn more: jack@sapling.gg.
+Easily integrate your LAND with brands to sponsor your experience. Get in touch to learn more: contact@sapling.gg.
 
 ## Install
 
